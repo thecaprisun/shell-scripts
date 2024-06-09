@@ -1,7 +1,7 @@
 #!/bin/bash
 echo -e $USER@$(hostname)
 echo -e "\e[31mOS:     \e[0m$(awk -F= 'NR==3 {gsub(/"/, "", $2); print $2}' /etc/os-release)"
-echo -e "\e[31mWM:     \e[0m$(printenv | awk 'NR==6 {split($0, a, "="); print a[2]}')"
+echo -e "\e[31mWM:     \e[0m$(echo $XDG_CURRENT_DESKTOP)"
 echo -e "\e[31mKernel: \e[0m$(uname -r)"
 echo -e "\e[31mRAM:    \e[0m$(free -m | awk '/^Mem:/ {print $3"M/"$2"M"}')"
 if command -v dpkg &> /dev/null; then
