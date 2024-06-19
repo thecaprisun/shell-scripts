@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 echo -e "$USER@$(hostname)"
 echo -e "\e[31mOS:     \e[0m$(. /etc/os-release;echo $PRETTY_NAME)"
 echo -e "\e[31mWM:     \e[0m$(echo $XDG_CURRENT_DESKTOP)"
